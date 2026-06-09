@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ailter — App Preview</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="stage">
+  <div class="device">
+    <div class="screen" data-screen-label="Ailter App">
+
+      <!-- ===== Status bar ===== -->
+      <div class="statusbar">
+        <span class="time">9:41</span>
+        <span class="sb-right">
+          <svg width="18" height="12" viewBox="0 0 18 12" fill="#000"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5.5" width="3" height="6.5" rx="1"/><rect x="10" y="3" width="3" height="9" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg>
+          <svg width="17" height="12" viewBox="0 0 17 12" fill="none"><path d="M8.5 2.2c2.4 0 4.6.9 6.2 2.4l1.4-1.5A11 11 0 0 0 8.5.2 11 11 0 0 0 .9 3.1l1.4 1.5A8.7 8.7 0 0 1 8.5 2.2Z" fill="#000"/><path d="M8.5 6c1.3 0 2.5.5 3.4 1.3l1.4-1.5a8 8 0 0 0-9.6 0l1.4 1.5A5 5 0 0 1 8.5 6Z" fill="#000"/><path d="m8.5 9.6 2-2.1a3 3 0 0 0-4 0l2 2.1Z" fill="#000"/></svg>
+          <svg width="27" height="13" viewBox="0 0 27 13" fill="none"><rect x="1" y="1" width="22" height="11" rx="3" stroke="#000" stroke-opacity=".35"/><rect x="2.5" y="2.5" width="19" height="8" rx="1.8" fill="#000"/><rect x="24.5" y="4.5" width="1.5" height="4" rx=".75" fill="#000" fill-opacity=".4"/></svg>
+        </span>
+      </div>
+
+      <!-- ===== App bar ===== -->
+      <div class="appbar">
+        <span class="brand">Ailter</span>
+        <span class="ai-label">AI감지</span>
+        <div class="toggle on" id="aiToggle"></div>
+        <div class="icon-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22a2.5 2.5 0 0 0 2.45-2H9.55A2.5 2.5 0 0 0 12 22Zm7-6v-5a7 7 0 0 0-5-6.7V3.5a2 2 0 1 0-4 0v.8A7 7 0 0 0 5 11v5l-2 2v1h18v-1l-2-2Z" fill="currentColor"/></svg></div>
+        <div class="icon-btn"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="8" r="3.6" stroke="currentColor" stroke-width="1.8"/><path d="M4.8 19.5a7.2 7.2 0 0 1 14.4 0" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="10.2" stroke="currentColor" stroke-width="1.8"/></svg></div>
+      </div>
+
+      <!-- ===== HOME ===== -->
+      <div class="body" data-view="home">
+        <!-- greeting -->
+        <div class="greet-card on" id="greetCard">
+          <div class="g-text">
+            <span class="status-dot"><i></i><span>AI 감지 활성화</span></span>
+            <h2 id="greetTitle">실시간 분석중...</h2>
+            <p id="greetBody">수현님, 안녕하세요!<br>현재 콘텐츠를 분석중입니다</p>
+          </div>
+          <img class="mascot" src="assets/mascot-greet.png" alt="Ailter 마스코트">
+        </div>
+
+        <!-- result -->
+        <div class="card">
+          <div class="section-head" style="margin-bottom:14px;">
+            <h3 class="t-h3">현재 콘텐츠 분석 결과</h3>
+            <span class="badge danger" style="background:var(--primary-100);">AI 생성 의심</span>
+          </div>
+          <div class="result-detect">
+            <div class="detect-thumb"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 8V5a2 2 0 0 1 2-2h3M16 3h3a2 2 0 0 1 2 2v3M21 16v3a2 2 0 0 1-2 2h-3M8 21H5a2 2 0 0 1-2-2v-3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/><circle cx="9" cy="11" r="1" fill="currentColor"/><circle cx="15" cy="11" r="1" fill="currentColor"/><path d="M9 15c1 .8 2 .8 3 .8s2 0 3-.8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></div>
+            <div class="detect-text">
+              <div class="k">AI 감지 활성화</div>
+              <div class="v">얼굴 패턴이 비정상적으로 반복됩니다</div>
+            </div>
+          </div>
+
+          <div class="gauge-box tappable" data-open="trust">
+            <div class="gb-head">
+              <h3>콘텐츠 신뢰도</h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="var(--gray-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <div class="gauge">
+              <svg width="220" height="130" viewBox="0 0 220 130">
+                <path d="M18 122 A92 92 0 0 1 202 122" fill="none" stroke="var(--gray-200)" stroke-width="22" stroke-linecap="round"/>
+                <path id="gaugeArc" d="M18 122 A92 92 0 0 1 202 122" fill="none" stroke="url(#gg)" stroke-width="22" stroke-linecap="round"/>
+                <defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="var(--primary-300)"/><stop offset="1" stop-color="var(--primary-500)"/></linearGradient></defs>
+                <circle id="gaugeKnob" r="11" fill="#fff" stroke="var(--primary-400)" stroke-width="2"/>
+              </svg>
+              <div class="center">
+                <div class="lvl">주의</div>
+                <div class="pct">42%</div>
+              </div>
+            </div>
+            <div class="gauge-legend">
+              <span style="color:var(--danger)"><i style="background:var(--danger)"></i>위험</span>
+              <span style="color:var(--warning)"><i style="background:var(--warning)"></i>주의</span>
+              <span style="color:var(--safe)"><i style="background:var(--safe)"></i>안전</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- recent records -->
+        <div>
+          <div class="section-head"><h3 class="t-h3">최근 분석 기록</h3><span class="more tappable" data-open="records">전체보기</span></div>
+          <div class="card" style="margin-top:14px;">
+            <div class="rec-list">
+              <div class="rec-row"><img class="platform" src="assets/logo-instagram.png" alt="Instagram"><div class="rec-main"><div class="name">Instagram</div><div class="time">2분전</div></div><span class="rec-tag">사람 생성</span></div>
+              <div class="rec-row"><img class="platform" src="assets/logo-tiktok.png" alt="TikTok"><div class="rec-main"><div class="name">Tik Tok</div><div class="time">15분전</div></div><span class="rec-tag">딥페이크 의심</span></div>
+              <div class="rec-row"><img class="platform" src="assets/logo-youtube.png" alt="YouTube"><div class="rec-main"><div class="name">YouTube Shorts</div><div class="time">1시간 전</div></div><span class="rec-tag">일반 콘텐츠</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- warning -->
+        <div class="alert">
+          <span class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.1" fill="currentColor"/></svg></span>
+          <div class="txt"><b>공유 전 다시 확인이 필요합니다</b><span>허위 정보가 포함된 이미지일 수 있습니다.</span></div>
+        </div>
+
+        <!-- tips -->
+        <div>
+          <div class="section-head"><h3 class="t-h3">AI 콘텐츠 구별 팁</h3><span class="more">전체보기</span></div>
+          <div class="tip-grid" style="margin-top:14px;">
+            <div class="tip"><span class="ti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="m5 17 3-8 3 8M6 14h4M15 4v6M12.5 7h5M17 15v5M14.5 17.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>AI 피부 표현<br>특징 확인</b></div>
+            <div class="tip"><span class="ti"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="2.5" stroke="currentColor" stroke-width="1.7"/><circle cx="8.5" cy="9.5" r="1.6" stroke="currentColor" stroke-width="1.5"/><path d="m4 17 4.5-4.5 3.5 3.5L16 12l4 4.5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><b>AI 피부 표현<br>특징 확인</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== HISTORY ===== -->
+      <div class="body" data-view="history" hidden>
+        <div class="hero-red">
+          <h2>안전하게 콘텐츠를<br>분석 중이에요</h2>
+          <img class="mascot" src="assets/mascot-detective.png" alt="">
+          <div class="hero-stats">
+            <div class="hero-stat"><div class="k">오늘 분석 콘텐츠</div><div class="v">42<small>건</small></div></div>
+            <div class="hero-stat danger"><div class="k">위험 콘텐츠</div><div class="v">3<small>건</small></div></div>
+          </div>
+        </div>
+
+        <div class="alert row-link">
+          <span class="ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.1" fill="currentColor"/></svg></span>
+          <div class="txt"><b>공유 전 경고 받은 콘텐츠</b><span>3건의 콘텐츠가 경고를 받았어요</span></div>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="var(--gray-400)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+
+        <div>
+          <h3 style="font-size:18px;font-weight:700;color:var(--black);margin-bottom:8px;">분석 기록</h3>
+          <div class="card">
+            <div class="rec-detail">
+              <div class="top"><img class="platform" src="assets/logo-instagram.png" alt=""><div class="rec-main"><div class="name">Instagram</div><div class="time">2분전</div></div><span class="hbadge warning"><i></i>주의</span></div>
+              <div class="desc"><img class="thumb" src="assets/reels-instagram.png" alt=""><div class="txt"><div class="dt">사람 생성</div><div class="dd">비정상적으로 매끄러운 피부 질감이 감지되었습니다.</div></div></div>
+            </div>
+            <div class="rec-detail">
+              <div class="top"><img class="platform" src="assets/logo-tiktok.png" alt=""><div class="rec-main"><div class="name">Tik Tok</div><div class="time">15분전</div></div><span class="hbadge danger"><i></i>위험</span></div>
+              <div class="desc"><img class="thumb" src="assets/reels-tiktok.png" alt=""><div class="txt"><div class="dt">계정 활동</div><div class="dd">비정상적인 로그인 시도가 탐지되었습니다.</div></div></div>
+            </div>
+            <div class="rec-detail">
+              <div class="top"><img class="platform" src="assets/logo-youtube.png" alt=""><div class="rec-main"><div class="name">YouTube Shorts</div><div class="time">1시간 전</div></div><span class="hbadge warning"><i></i>주의</span></div>
+              <div class="desc"><img class="thumb" src="assets/reels-youtube.png" alt=""><div class="txt"><div class="dt">콘텐츠 게시</div><div class="dd">과도한 스팸 메시지가 감지되었습니다.</div></div></div>
+            </div>
+          </div>
+          <div class="more-btn" style="margin-top:24px;">더보기 <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        </div>
+      </div>
+
+      <!-- ===== LEARNING ===== -->
+      <div class="body" data-view="learn" hidden>
+        <div class="test-banner">
+          <div class="tb-text">
+            <div class="eyebrow">실전 테스트</div>
+            <h2>AI 콘텐츠 테스트</h2>
+            <p>퀴즈를 통해 실력을 확인하세요!</p>
+          </div>
+          <button class="btn-test">시작하기</button>
+        </div>
+
+        <div>
+          <div class="section-head"><h3 style="font-size:18px;font-weight:700;color:var(--black);">오늘의 학습 카드</h3><span class="more">전체보기</span></div>
+          <div class="learn-grid" style="margin-top:14px;">
+            <div class="learn-card"><img class="lc-img" src="assets/learn-image.png" alt=""><div class="lc-body"><b>AI 이미지 특징</b><p>어색한 손가락, 배경 왜곡 찾기</p></div></div>
+            <div class="learn-card"><img class="lc-img" src="assets/learn-deepfake.png" alt=""><div class="lc-body"><b>딥페이크 영상 구별</b><p>입 모양과 음성의 싱크를 확인하는 법</p></div></div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="font-size:18px;font-weight:700;color:var(--black);margin-bottom:14px;">콘텐츠 사례 학습</h3>
+          <div class="hscroll">
+            <div class="case"><img class="case-img" src="assets/case-study.png" alt=""><b>틱톡 딥페이크 챌린지</b></div>
+            <div class="case"><img class="case-img" src="assets/case-study.png" alt=""><b>인스타그램 허위 광고</b></div>
+            <div class="case"><img class="case-img" src="assets/case-study.png" alt=""><b>쇼츠 정보 왜곡 사례</b></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SETTINGS ===== -->
+      <div class="body" data-view="settings" hidden>
+        <div class="profile-card">
+          <span class="ava"><img src="assets/mascot-greet.png" alt=""></span>
+          <div class="pc-text">
+            <div class="nm">김수현</div>
+            <span class="badge-mode"><span class="shield"><svg width="8" height="8" viewBox="0 0 24 24" fill="none"><path d="M12 2 4 5v6c0 5 3.4 8.5 8 11 4.6-2.5 8-6 8-11V5l-8-3Z" fill="#fff"/></svg></span>청소년 보호 모드 활성화</span>
+          </div>
+          <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        </div>
+
+        <div class="settings-list">
+          <div class="set-row">알림 설정 <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="set-row">분석 설정 <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="set-row">개인정보 관리 <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="set-row">신뢰 레벨 표시 설정 <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="set-row">학습 데이터 관리 <span class="chev"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="m9 6 6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></div>
+          <div class="set-row">로그아웃</div>
+          <div class="set-row muted">앱 정보 <span class="val">v1.2.4</span></div>
+        </div>
+      </div>
+
+      <!-- ===== SUBPAGE: 콘텐츠 신뢰도 상세 (B-0) ===== -->
+      <div class="subpage" id="sub-trust" data-screen-label="홈 > 콘텐츠 신뢰도">
+        <div class="sub-head center">
+          <div class="back" data-close><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h1>콘텐츠 신뢰도</h1>
+        </div>
+        <div class="sub-body">
+          <div class="trust-title-row">
+            <h2>콘텐츠 신뢰 등급</h2>
+            <span class="trust-badge">AI 생성 의심</span>
+          </div>
+
+          <div class="trust-card">
+            <div class="gauge">
+              <svg width="220" height="130" viewBox="0 0 220 130">
+                <path d="M18 122 A92 92 0 0 1 202 122" fill="none" stroke="var(--gray-200)" stroke-width="22" stroke-linecap="round"/>
+                <path id="gaugeArc2" d="M18 122 A92 92 0 0 1 202 122" fill="none" stroke="url(#gg2)" stroke-width="22" stroke-linecap="round"/>
+                <defs><linearGradient id="gg2" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="var(--primary-300)"/><stop offset="1" stop-color="var(--primary-500)"/></linearGradient></defs>
+                <circle id="gaugeKnob2" r="11" fill="#fff" stroke="var(--primary-400)" stroke-width="2"/>
+              </svg>
+              <div class="center"><div class="lvl">주의</div><div class="pct">42%</div></div>
+            </div>
+            <div class="legend-divided">
+              <span style="color:var(--danger)"><i style="background:var(--danger)"></i>위험</span>
+              <span style="color:var(--warning)"><i style="background:var(--warning)"></i>주의</span>
+              <span style="color:var(--safe)"><i style="background:var(--safe)"></i>안전</span>
+            </div>
+          </div>
+
+          <div class="info-alert">
+            <span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.1" fill="currentColor"/></svg></span>
+            <p>여러 매체에서 교차 검증을 하는 것이 가장 안전한 방법입니다.</p>
+          </div>
+
+          <div class="cp-head">
+            <h2>단계별 체크포인트</h2>
+            <p>콘텐츠를 소비할 때 다음 기준을 하나씩 체크해보세요.</p>
+          </div>
+
+          <div class="cp-card">
+            <span class="cp-badge safe"><i></i>안전</span>
+            <div class="cp-item"><div class="it-t">명확한 출처</div><div class="it-d">공공기관이나 검증된 뉴스 매체의 정보</div></div>
+            <div class="cp-item"><div class="it-t">논리적인 댓글 반응</div><div class="it-d">실제 경험에 근거한 구체적인 피드백들</div></div>
+            <div class="cp-item"><div class="it-t">투명한 광고 표기</div><div class="it-d">상업적 목적을 숨기지 않고 밝힘</div></div>
+          </div>
+
+          <div class="cp-card">
+            <span class="cp-badge warning"><i></i>주의</span>
+            <div class="cp-item"><div class="it-t">인위적인 AI 생성 흔적</div><div class="it-d">지나치게 매끄럽거나 어색한 문장 구조</div></div>
+            <div class="cp-item"><div class="it-t">모호한 광고/협찬</div><div class="it-d">태그 뒤에 숨기거나 작게 적힌 협찬 문구</div></div>
+          </div>
+
+          <div class="cp-card">
+            <span class="cp-badge danger"><i></i>위험</span>
+            <div class="cp-item"><div class="it-t">가짜 뉴스 및 딥페이크</div><div class="it-d">조작된 이미지나 확인되지 않은 자극적 정보</div></div>
+            <div class="cp-item"><div class="it-t">의도적인 정보 왜곡</div><div class="it-d">특정 대상을 비방하거나 불법 광고 유도</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== SUBPAGE: 최근 분석 기록 상세 ===== -->
+      <div class="subpage" id="sub-records" data-screen-label="홈 > 최근 분석 기록">
+        <div class="sub-head center">
+          <div class="back" data-close><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="m15 6-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h1>최근 분석 기록</h1>
+        </div>
+        <div class="sub-body">
+          <div class="rec-search-row">
+            <div class="rec-search">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="#bcbdc4" stroke-width="2"/><path d="m20 20-3.2-3.2" stroke="#bcbdc4" stroke-width="2" stroke-linecap="round"/></svg>
+              <span>분석한 콘텐츠를 검색해보세요</span>
+            </div>
+            <button class="rec-search-btn">검색</button>
+          </div>
+
+          <div class="filter-chips">
+            <span class="chip active">전체</span>
+            <span class="chip">AI 의심</span>
+            <span class="chip">일반 콘텐츠</span>
+            <span class="chip">위험 콘텐츠</span>
+          </div>
+
+          <div class="rec-section">
+            <div class="sec-h">
+              <h2>이번 주 분석</h2>
+              <p>지난 7일간 총 24건의 콘텐츠가 분석되었어요</p>
+            </div>
+            <div class="chart-card">
+              <div class="chart-head"><span class="lbl">평균 신뢰도</span><span class="score">88점</span></div>
+              <div class="chart-wrap">
+                <div class="chart-yaxis"><span>5</span><span>4</span><span>3</span><span>2</span><span>1</span></div>
+                <svg class="chart-svg" viewBox="0 0 280 88" preserveAspectRatio="none" height="92">
+                  <line x1="8" y1="6" x2="272" y2="6" stroke="#EDEEF1" stroke-width="1"/>
+                  <line x1="8" y1="25.5" x2="272" y2="25.5" stroke="#EDEEF1" stroke-width="1"/>
+                  <line x1="8" y1="45" x2="272" y2="45" stroke="#EDEEF1" stroke-width="1"/>
+                  <line x1="8" y1="64.5" x2="272" y2="64.5" stroke="#EDEEF1" stroke-width="1"/>
+                  <line x1="8" y1="84" x2="272" y2="84" stroke="#EDEEF1" stroke-width="1"/>
+                  <path d="M8 84 L52 45 L96 64.5 L140 25.5 L184 45 L228 45 L272 64.5 L272 84 L8 84 Z" fill="#FFF3F2"/>
+                  <path d="M8 84 L52 45 L96 64.5 L140 25.5 L184 45 L228 45 L272 64.5" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  <g fill="var(--primary)">
+                    <circle cx="8" cy="84" r="3.4"/><circle cx="52" cy="45" r="3.4"/><circle cx="96" cy="64.5" r="3.4"/><circle cx="140" cy="25.5" r="3.4"/><circle cx="184" cy="45" r="3.4"/><circle cx="228" cy="45" r="3.4"/><circle cx="272" cy="64.5" r="3.4"/>
+                  </g>
+                </svg>
+                <div class="chart-xaxis"><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="warn-card">
+            <span class="ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.1" fill="currentColor"/></svg></span>
+            <div class="wt"><b>위험 콘텐츠 경고</b><p>허위 정보 전파 가능성이 높은 이미지가 다수 감지되었습니다. 공유 시 주의하세요.</p></div>
+          </div>
+
+          <div class="rec-section">
+            <div class="sec-h">
+              <h2>분석 기록</h2>
+              <p>콘텐츠를 소비할 때 다음 기준을 하나씩 체크해보세요.</p>
+            </div>
+            <div class="rec-list-card">
+              <div class="rec-entry">
+                <div class="e-top">
+                  <img class="e-logo" src="assets/logo-instagram.png" alt="Instagram">
+                  <div class="e-meta"><div class="e-name">Instagram</div><div class="e-time">2분전</div></div>
+                  <span class="rbadge warning"><i></i>주의</span>
+                </div>
+                <div class="e-detail">
+                  <img class="e-thumb" src="assets/reels-instagram.png" alt="">
+                  <div class="e-text"><div class="et">사람 생성</div><div class="ed">비정상적으로 매끄러운 피부 질감이 감지되었습니다.</div></div>
+                </div>
+              </div>
+              <div class="rec-entry">
+                <div class="e-top">
+                  <img class="e-logo" src="assets/logo-tiktok.png" alt="TikTok">
+                  <div class="e-meta"><div class="e-name">Tik Tok</div><div class="e-time">15분전</div></div>
+                  <span class="rbadge danger"><i></i>위험</span>
+                </div>
+                <div class="e-detail">
+                  <img class="e-thumb" src="assets/reels-tiktok.png" alt="">
+                  <div class="e-text"><div class="et">계정 활동</div><div class="ed">비정상적인 로그인 시도가 탐지되었습니다.</div></div>
+                </div>
+              </div>
+              <div class="rec-entry">
+                <div class="e-top">
+                  <img class="e-logo" src="assets/logo-youtube.png" alt="YouTube">
+                  <div class="e-meta"><div class="e-name">YouTube Shorts</div><div class="e-time">1시간 전</div></div>
+                  <span class="rbadge warning"><i></i>주의</span>
+                </div>
+                <div class="e-detail">
+                  <img class="e-thumb" src="assets/reels-youtube.png" alt="">
+                  <div class="e-text"><div class="et">콘텐츠 게시</div><div class="ed">과도한 스팸 메시지가 감지되었습니다.</div></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Tab bar ===== -->
+      <div class="tabbar">
+        <div class="tab active" data-tab="home"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1v-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>홈</div>
+        <div class="tab" data-tab="history"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1M3.5 4.5V9H8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>기록</div>
+        <div class="tab" data-tab="learn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 1 4 17.5v-12ZM20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 0 1.5-1.5v-12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>학습</div>
+        <div class="tab" data-tab="settings"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.4M12 19.1v2.4M21.5 12h-2.4M4.9 12H2.5M18.7 5.3l-1.7 1.7M7 17l-1.7 1.7M18.7 18.7 17 17M7 7 5.3 5.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>설정</div>
+      </div>
+      <div class="home-indicator"><i></i></div>
+
+    </div>
+  </div>
+
+  <p class="caption-note" style="position:fixed;bottom:18px;left:0;right:0;">하단 탭으로 화면 전환 · 상단 <b>AI감지</b> 토글로 분석 상태 변경</p>
+</div>
+
+<script>
+  // ---- AI toggle (home greeting) ----
+  const aiToggle = document.getElementById('aiToggle');
+  const greetCard = document.getElementById('greetCard');
+  const greetTitle = document.getElementById('greetTitle');
+  const greetBody = document.getElementById('greetBody');
+  const greetDot = greetCard.querySelector('.status-dot span');
+  function renderAI() {
+    const on = aiToggle.classList.contains('on');
+    greetCard.classList.toggle('on', on);
+    greetDot.textContent = on ? 'AI 감지 활성화' : 'AI 감지 비활성화';
+    greetTitle.textContent = on ? '실시간 분석중...' : '실시간 분석하기';
+    greetBody.innerHTML = on
+      ? '수현님, 안녕하세요!<br>현재 콘텐츠를 분석중입니다'
+      : '수현님, 안녕하세요!<br>오늘도 분석을 시작할까요?';
+  }
+  aiToggle.addEventListener('click', () => { aiToggle.classList.toggle('on'); renderAI(); });
+  renderAI();
+
+  // ---- Tab switching ----
+  const tabs = document.querySelectorAll('.tab');
+  const views = document.querySelectorAll('.body');
+  tabs.forEach(tab => tab.addEventListener('click', () => {
+    tabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    const v = tab.dataset.tab;
+    views.forEach(view => view.hidden = (view.dataset.view !== v));
+  }));
+
+  // ---- Sub-page navigation (hide app body underneath for clean stacking) ----
+  const appScreen = document.querySelector('.screen');
+  document.querySelectorAll('[data-open]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const sp = document.getElementById('sub-' + el.dataset.open);
+      if (sp) { appScreen.classList.add('sub-active'); sp.classList.add('open'); sp.querySelector('.sub-body').scrollTop = 0; }
+    });
+  });
+  document.querySelectorAll('[data-close]').forEach(el => {
+    el.addEventListener('click', () => {
+      el.closest('.subpage').classList.remove('open');
+      appScreen.classList.remove('sub-active');
+    });
+  });
+
+  // ---- Records filter chips ----
+  document.querySelectorAll('#sub-records .chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#sub-records .chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+    });
+  });
+
+  // ---- Gauge knob position helper ----
+  function placeGauge(arcId, knobId, pct) {
+    const arc = document.getElementById(arcId);
+    const knob = document.getElementById(knobId);
+    if (!arc) return;
+    const len = arc.getTotalLength();
+    arc.style.strokeDasharray = len;
+    arc.style.strokeDashoffset = len * (1 - pct);
+    const pt = arc.getPointAtLength(len * pct);
+    knob.setAttribute('cx', pt.x);
+    knob.setAttribute('cy', pt.y);
+  }
+  placeGauge('gaugeArc', 'gaugeKnob', 0.42);
+  placeGauge('gaugeArc2', 'gaugeKnob2', 0.42);
+</script>
+</body>
+</html>

@@ -1,0 +1,114 @@
+/* ============================================================
+   Ailter — Design Tokens
+   AI 콘텐츠 신뢰 판단 서비스 / 디자인 시스템
+   ============================================================ */
+
+/* ---- Fonts ---- */
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css");
+@import url("https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ---------- Brand / Primary (red) ---------- */
+  --primary-100: #FFD8D7;
+  --primary-200: #FFB1AF;
+  --primary-300: #FF8A88;
+  --primary-400: #FF6360;
+  --primary-500: #FF3C38;  /* main */
+  --primary-600: #CF302D;
+  --primary-700: #9F2422;
+  --primary-800: #6F1816;
+  --primary-900: #3F0C0B;
+  --primary: var(--primary-500);
+
+  /* ---------- Neutral / Gray ---------- */
+  --gray-100: #F9FAFB;
+  --gray-200: #E9EBEF;
+  --gray-300: #C5C6CD;
+  --gray-400: #999BA5;
+  --gray-500: #6F717C;
+  --black:    #1E1E1E;
+  --white:    #FFFFFF;
+
+  /* ---------- Semantic ---------- */
+  --danger:  #FF3C38;   /* 위험  */
+  --warning: #FF9900;   /* 주의  */
+  --safe:    #009EFF;   /* 안전  */
+  --accent:  #8A38F5;   /* 학습 / 보호모드 (purple) */
+
+  --danger-bg:  #FFE1E0;
+  --warning-bg: #FFF0D6;
+  --safe-bg:    #DCF0FF;
+  --accent-bg:  #EFE7FE;
+
+  /* ---------- Surfaces ---------- */
+  --bg-app:     var(--gray-100);
+  --bg-surface: var(--white);
+  --bg-subtle:  #EFEFEE;
+  --border:     var(--gray-200);
+  --divider:    #F0F1F4;
+
+  /* ---------- Text ---------- */
+  --text-strong:  var(--black);
+  --text-default: #2B2D33;
+  --text-muted:   var(--gray-500);
+  --text-subtle:  var(--gray-400);
+  --text-invert:  var(--white);
+
+  /* ---------- Typography ---------- */
+  --font-ui: "Pretendard Variable", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-brand: "Wanted Sans Variable", "Wanted Sans", var(--font-ui);
+  --font-label: "Inter", var(--font-ui);
+
+  --tracking: -0.02em;          /* 자간 -2% */
+  --leading-tight: 1;           /* 행간 100% */
+  --leading: 1.5;               /* 행간 150% */
+
+  /* type sizes */
+  --fs-h1: 40px;
+  --fs-h2: 24px;
+  --fs-h3: 20px;
+  --fs-sub1: 18px;
+  --fs-sub2: 16px;
+  --fs-body1: 16px;
+  --fs-body2: 14px;
+  --fs-btn-lg: 16px;
+  --fs-btn-sm: 14px;
+  --fs-caption: 12px;
+
+  /* ---------- Spacing scale (4-base) ---------- */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 999px;
+
+  /* ---------- Elevation ---------- */
+  --elev-0: none;
+  --elev-1: 0 0 20px 0 rgba(0,0,0,0.02);                 /* base card */
+  --elev-2: 0 4px 16px 0 rgba(0,0,0,0.06);               /* raised */
+  --elev-3: 0 8px 24px 0 rgba(0,0,0,0.12);               /* overlay / floating */
+  --elev-brand: 0 4px 22.7px 0 rgba(0,0,0,0.14);         /* hero card */
+}
+
+/* ---------- Type utility classes ---------- */
+.t-h1   { font: 700 var(--fs-h1)/var(--leading) var(--font-ui);   letter-spacing: var(--tracking); }
+.t-h2   { font: 700 var(--fs-h2)/var(--leading) var(--font-ui);   letter-spacing: var(--tracking); }
+.t-h3   { font: 600 var(--fs-h3)/var(--leading) var(--font-ui);   letter-spacing: var(--tracking); }
+.t-sub1 { font: 600 var(--fs-sub1)/var(--leading) var(--font-ui); letter-spacing: var(--tracking); }
+.t-sub2 { font: 600 var(--fs-sub2)/var(--leading) var(--font-ui); letter-spacing: var(--tracking); }
+.t-body1{ font: 400 var(--fs-body1)/var(--leading) var(--font-ui);letter-spacing: var(--tracking); }
+.t-body2{ font: 400 var(--fs-body2)/var(--leading) var(--font-ui);letter-spacing: var(--tracking); }
+.t-btn-lg{font: 500 var(--fs-btn-lg)/var(--leading-tight) var(--font-ui); letter-spacing: var(--tracking); }
+.t-btn-sm{font: 500 var(--fs-btn-sm)/var(--leading-tight) var(--font-ui); letter-spacing: var(--tracking); }
+.t-caption{font:400 var(--fs-caption)/var(--leading) var(--font-ui);letter-spacing: var(--tracking); }

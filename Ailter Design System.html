@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ailter — Design System</title>
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="ds.css">
+</head>
+<body>
+<div class="ds-wrap">
+
+  <!-- ===== Side nav ===== -->
+  <nav class="ds-nav">
+    <div class="logo">Ailter</div>
+    <div class="tagline">AI 콘텐츠 신뢰 판단<br>디자인 시스템 v1.0</div>
+    <a href="#typography" class="active"><span class="nav-num">01</span> Typography</a>
+    <a href="#color"><span class="nav-num">02</span> Color</a>
+    <a href="#spacing"><span class="nav-num">03</span> Spacing &amp; Radius</a>
+    <a href="#elevation"><span class="nav-num">04</span> Elevation</a>
+    <a href="#components"><span class="nav-num">05</span> UI Kit</a>
+    <a href="Ailter App.html" class="app-link">앱 프리뷰 열기 →</a>
+  </nav>
+
+  <main class="ds-main">
+
+    <!-- ===== Hero ===== -->
+    <header class="hero">
+      <div class="logo">Ailter</div>
+      <h1>AI가 만든 콘텐츠를 한눈에. 신뢰를 판단하는 인터페이스를 위한 디자인 시스템.</h1>
+      <p>타이포 스케일, 컬러 토큰, 간격·elevation, UI Kit 컴포넌트를 하나의 토큰 세트(<code>tokens.css</code>)로 정의합니다. 실제 모바일 앱 화면에서 그대로 쓰이는 살아있는 컴포넌트를 보여줍니다.</p>
+      <div class="meta">
+        <span>Pretendard · Wanted Sans</span>
+        <span>Primary #FF3C38</span>
+        <span>4px Spacing scale</span>
+        <span>3-level Elevation</span>
+      </div>
+    </header>
+
+    <!-- ===== 01 Typography ===== -->
+    <section class="section" id="typography">
+      <div class="sec-head">
+        <div class="sec-eyebrow">01 — Foundations</div>
+        <h2 class="sec-title">Typography</h2>
+        <p class="sec-desc">본문은 <b>Pretendard</b>, 브랜드 워드마크는 <b>Wanted Sans</b>를 사용합니다. 모든 텍스트는 자간 −2%, 행간 150%를 기본으로 하며, 헤드라인은 100% 행간으로 압축합니다.</p>
+      </div>
+
+      <div class="hgroup-label">Display &amp; Heading</div>
+      <div class="type-row">
+        <div class="meta"><div class="tname">Headline 1</div><div class="tspec">Bold · 40 / 60<br>−2% tracking</div></div>
+        <div class="sample" style="font:700 40px/1.2 var(--font-ui);letter-spacing:var(--tracking)">신뢰할 수 있나요?</div>
+      </div>
+      <div class="type-row">
+        <div class="meta"><div class="tname">Headline 2</div><div class="tspec">Bold · 24 / 36</div></div>
+        <div class="sample" style="font:700 24px/1.3 var(--font-ui);letter-spacing:var(--tracking)">안전하게 콘텐츠를 분석 중이에요</div>
+      </div>
+      <div class="type-row">
+        <div class="meta"><div class="tname">Headline 3</div><div class="tspec">SemiBold · 20 / 30</div></div>
+        <div class="sample" style="font:600 20px/1.4 var(--font-ui);letter-spacing:var(--tracking)">현재 콘텐츠 분석 결과</div>
+      </div>
+
+      <div class="hgroup-label">Subtitle &amp; Body</div>
+      <div class="type-row">
+        <div class="meta"><div class="tname">Subtitle 1</div><div class="tspec">SemiBold · 18 / 27</div></div>
+        <div class="sample" style="font:600 18px/1.5 var(--font-ui);letter-spacing:var(--tracking)">얼굴 패턴이 비정상적으로 반복됩니다</div>
+      </div>
+      <div class="type-row">
+        <div class="meta"><div class="tname">Body 1</div><div class="tspec">Regular · 16 / 24</div></div>
+        <div class="sample" style="font:400 16px/1.5 var(--font-ui);letter-spacing:var(--tracking)">AI 생성 가능성이 일부 항목에서 감지되었습니다. 공유 전 출처를 한 번 더 확인하세요.</div>
+      </div>
+      <div class="type-row">
+        <div class="meta"><div class="tname">Body 2</div><div class="tspec">Regular · 14 / 21</div></div>
+        <div class="sample" style="font:400 14px/1.5 var(--font-ui);letter-spacing:var(--tracking)">비정상적으로 매끄러운 피부 질감이 감지되었습니다.</div>
+      </div>
+
+      <div class="hgroup-label">Label &amp; Caption</div>
+      <div class="type-row">
+        <div class="meta"><div class="tname">Button</div><div class="tspec">Medium · 16 / 100%</div></div>
+        <div class="sample"><span style="font:500 16px/1 var(--font-ui);letter-spacing:var(--tracking);background:var(--primary);color:#fff;padding:14px 22px;border-radius:12px;display:inline-block">분석 리포트 저장</span></div>
+      </div>
+      <div class="type-row">
+        <div class="meta"><div class="tname">Caption</div><div class="tspec">Regular · 12 / 18</div></div>
+        <div class="sample" style="font:400 12px/1.5 var(--font-ui);letter-spacing:var(--tracking);color:var(--text-muted)">2분전 · Instagram</div>
+      </div>
+    </section>
+
+    <!-- ===== 02 Color ===== -->
+    <section class="section" id="color">
+      <div class="sec-head">
+        <div class="sec-eyebrow">02 — Foundations</div>
+        <h2 class="sec-title">Color</h2>
+        <p class="sec-desc">시그널 레드(<b>#FF3C38</b>)가 브랜드와 경고를 동시에 표현합니다. 뉴트럴은 차분한 그레이 5단계, 시맨틱은 위험·주의·안전·학습 4색으로 신뢰도 상태를 일관되게 전달합니다.</p>
+      </div>
+
+      <div class="hgroup-label">Primary — 시그널 레드</div>
+      <div class="scale-row" id="primaryScale"></div>
+
+      <div class="hgroup-label">Neutral — 그레이</div>
+      <div class="swatch-grid" id="neutralGrid"></div>
+
+      <div class="hgroup-label">Semantic — 신뢰도 상태</div>
+      <div class="semantic-grid">
+        <div class="sem-card">
+          <div class="top"><span class="dot" style="background:var(--danger)"></span><div><div class="nm">위험 · Danger</div><div class="use">딥페이크 / AI 생성 의심</div></div></div>
+          <div class="pair"><div class="pc" style="background:var(--danger);color:#fff">#FF3C38</div><div class="pc" style="background:var(--danger-bg);color:var(--danger)">BG #FFE1E0</div></div>
+        </div>
+        <div class="sem-card">
+          <div class="top"><span class="dot" style="background:var(--warning)"></span><div><div class="nm">주의 · Warning</div><div class="use">확인 필요 / 일부 의심</div></div></div>
+          <div class="pair"><div class="pc" style="background:var(--warning);color:#fff">#FF9900</div><div class="pc" style="background:var(--warning-bg);color:var(--warning)">BG #FFF0D6</div></div>
+        </div>
+        <div class="sem-card">
+          <div class="top"><span class="dot" style="background:var(--safe)"></span><div><div class="nm">안전 · Safe</div><div class="use">일반 / 신뢰 콘텐츠</div></div></div>
+          <div class="pair"><div class="pc" style="background:var(--safe);color:#fff">#009EFF</div><div class="pc" style="background:var(--safe-bg);color:var(--safe)">BG #DCF0FF</div></div>
+        </div>
+        <div class="sem-card">
+          <div class="top"><span class="dot" style="background:var(--accent)"></span><div><div class="nm">학습 · Accent</div><div class="use">보호 모드 / 학습 콘텐츠</div></div></div>
+          <div class="pair"><div class="pc" style="background:var(--accent);color:#fff">#8A38F5</div><div class="pc" style="background:var(--accent-bg);color:var(--accent)">BG #EFE7FE</div></div>
+        </div>
+      </div>
+
+      <div class="token-note">신뢰도 게이지는 위험→주의→안전 순으로 <code>--danger</code> → <code>--warning</code> → <code>--safe</code> 그라데이션을 사용하며, 퍼센트 구간(0–40 위험 / 41–70 주의 / 71–100 안전)에 따라 레벨 라벨 색이 결정됩니다.</div>
+    </section>
+
+    <!-- ===== 03 Spacing & Radius ===== -->
+    <section class="section" id="spacing">
+      <div class="sec-head">
+        <div class="sec-eyebrow">03 — Foundations</div>
+        <h2 class="sec-title">Spacing &amp; Radius</h2>
+        <p class="sec-desc">모든 간격은 4px 베이스 스케일에서 파생됩니다. 카드는 16px 내부 패딩, 섹션 간 24px 간격이 기본 리듬입니다. 라운딩은 컴포넌트 위계에 따라 8–20px를 사용합니다.</p>
+      </div>
+
+      <div class="hgroup-label">Spacing scale (4px base)</div>
+      <div class="space-list" id="spaceList"></div>
+
+      <div class="hgroup-label">Radius</div>
+      <div class="radius-grid">
+        <div class="radius-card"><div class="box" style="border-radius:var(--radius-sm)"></div><div class="nm">sm</div><div class="v">8px · chip, input</div></div>
+        <div class="radius-card"><div class="box" style="border-radius:var(--radius-md)"></div><div class="nm">md</div><div class="v">12px · card, button</div></div>
+        <div class="radius-card"><div class="box" style="border-radius:var(--radius-lg)"></div><div class="nm">lg</div><div class="v">16px · hero, sheet</div></div>
+        <div class="radius-card"><div class="box" style="border-radius:var(--radius-full)"></div><div class="nm">full</div><div class="v">999px · badge, toggle</div></div>
+      </div>
+    </section>
+
+    <!-- ===== 04 Elevation ===== -->
+    <section class="section" id="elevation">
+      <div class="sec-head">
+        <div class="sec-eyebrow">04 — Foundations</div>
+        <h2 class="sec-title">Elevation</h2>
+        <p class="sec-desc">그림자는 매우 절제해서 사용합니다. 라이트 UI에 맞춰 낮은 불투명도의 3단계 그림자로 표면 위계를 만듭니다.</p>
+      </div>
+      <div class="elev-grid">
+        <div class="elev-card"><div class="box" style="box-shadow:var(--elev-1)"></div><div class="nm">Elevation 1</div><div class="v">기본 카드</div></div>
+        <div class="elev-card"><div class="box" style="box-shadow:var(--elev-2)"></div><div class="nm">Elevation 2</div><div class="v">강조 카드</div></div>
+        <div class="elev-card"><div class="box" style="box-shadow:var(--elev-3)"></div><div class="nm">Elevation 3</div><div class="v">플로팅 / 오버레이</div></div>
+      </div>
+    </section>
+
+    <!-- ===== 05 UI Kit ===== -->
+    <section class="section" id="components">
+      <div class="sec-head">
+        <div class="sec-eyebrow">05 — UI Kit</div>
+        <h2 class="sec-title">Components</h2>
+        <p class="sec-desc">실제 앱 화면에서 그대로 사용되는 살아있는 컴포넌트입니다. 모든 컴포넌트는 위 토큰만으로 구성됩니다.</p>
+      </div>
+
+      <div class="comp-grid">
+        <!-- Buttons -->
+        <div class="comp-card">
+          <div class="preview">
+            <div class="s-row"><button class="s-btn primary">분석 리포트 저장</button></div>
+            <div class="s-row"><button class="s-btn purple">테스트 시작하기</button><button class="s-btn ghost">신고하기</button></div>
+            <div class="s-row"><button class="s-btn disabled">분석 대기중</button></div>
+          </div>
+          <div class="label"><div class="nm">Button</div><div class="ds">Primary · Accent · Ghost · Disabled</div></div>
+        </div>
+
+        <!-- Badges -->
+        <div class="comp-card">
+          <div class="preview">
+            <div class="s-row">
+              <span class="s-badge danger"><span class="d"></span>위험</span>
+              <span class="s-badge warning"><span class="d"></span>주의</span>
+              <span class="s-badge safe"><span class="d"></span>안전</span>
+            </div>
+            <div class="s-row"><span class="s-badge" style="background:var(--primary-100);color:var(--primary)">AI 생성 의심</span></div>
+          </div>
+          <div class="label"><div class="nm">Status Badge</div><div class="ds">신뢰도 상태 라벨</div></div>
+        </div>
+
+        <!-- Toggle -->
+        <div class="comp-card">
+          <div class="preview">
+            <div class="s-row" style="gap:20px"><div class="s-toggle"></div><span style="font-size:13px;color:var(--text-muted);font-family:var(--font-label)">AI감지 ON</span></div>
+            <div class="s-row" style="gap:20px"><div class="s-toggle off"></div><span style="font-size:13px;color:var(--text-muted);font-family:var(--font-label)">AI감지 OFF</span></div>
+          </div>
+          <div class="label"><div class="nm">Toggle</div><div class="ds">실시간 감지 on/off</div></div>
+        </div>
+
+        <!-- Filter chips -->
+        <div class="comp-card">
+          <div class="preview">
+            <div class="s-row"><span class="s-chip active">전체</span><span class="s-chip">위험</span><span class="s-chip">주의</span><span class="s-chip">안전</span></div>
+          </div>
+          <div class="label"><div class="nm">Filter Chip</div><div class="ds">기록 필터링</div></div>
+        </div>
+
+        <!-- Record row -->
+        <div class="comp-card wide">
+          <div class="preview" style="align-items:stretch">
+            <div class="s-card-mini"><img src="assets/logo-instagram.png" alt=""><div><div class="nm">Instagram</div><div class="tm">2분전</div></div><span class="s-pill">사람 생성</span></div>
+            <div class="s-card-mini"><img src="assets/logo-tiktok.png" alt=""><div><div class="nm">Tik Tok</div><div class="tm">15분전</div></div><span class="s-pill">딥페이크 의심</span></div>
+          </div>
+          <div class="label"><div class="nm">Record Row</div><div class="ds">플랫폼 · 시각 · 분석 태그</div></div>
+        </div>
+
+        <!-- Trust factor bar -->
+        <div class="comp-card">
+          <div class="preview" style="align-items:stretch;gap:18px">
+            <div style="width:100%"><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:8px;white-space:nowrap"><span>얼굴 패턴 일관성</span><span style="color:var(--danger)">35%</span></div><div class="s-bar"><i style="width:35%;background:var(--danger)"></i></div></div>
+            <div style="width:100%"><div style="display:flex;justify-content:space-between;font-size:13px;font-weight:600;margin-bottom:8px;white-space:nowrap"><span>메타데이터 정합성</span><span style="color:var(--safe)">78%</span></div><div class="s-bar"><i style="width:78%;background:var(--safe)"></i></div></div>
+          </div>
+          <div class="label"><div class="nm">Factor Bar</div><div class="ds">항목별 신뢰도 게이지</div></div>
+        </div>
+
+        <!-- Gauge -->
+        <div class="comp-card">
+          <div class="preview" style="align-items:center">
+            <div style="position:relative;width:180px">
+              <svg width="180" height="106" viewBox="0 0 220 130"><path d="M18 122 A92 92 0 0 1 202 122" fill="none" stroke="var(--gray-200)" stroke-width="22" stroke-linecap="round"/><path id="dsGauge" d="M18 122 A92 92 0 0 1 202 122" fill="none" stroke="url(#dsgg)" stroke-width="22" stroke-linecap="round"/><defs><linearGradient id="dsgg" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="var(--primary-300)"/><stop offset="1" stop-color="var(--primary-500)"/></linearGradient></defs><circle id="dsKnob" r="10" fill="#fff" stroke="var(--primary-400)" stroke-width="2"/></svg>
+              <div style="position:absolute;left:0;right:0;bottom:14px;text-align:center"><div style="font-size:13px;font-weight:600;color:var(--warning)">주의</div><div style="font-size:28px;font-weight:700">42%</div></div>
+            </div>
+          </div>
+          <div class="label"><div class="nm">Trust Gauge</div><div class="ds">콘텐츠 신뢰도 반원 게이지</div></div>
+        </div>
+
+        <!-- Tab bar -->
+        <div class="comp-card">
+          <div class="preview" style="align-items:stretch">
+            <div class="tabbar-demo">
+              <div class="t active"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 11 12 4l8 7v8a1 1 0 0 1-1 1h-4v-6h-6v6H5a1 1 0 0 1-1-1v-8Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>홈</div>
+              <div class="t"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3.5 12a8.5 8.5 0 1 0 2.6-6.1M3.5 4.5V9H8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 7.5V12l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>기록</div>
+              <div class="t"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 5.5A1.5 1.5 0 0 1 5.5 4H11v15H5.5A1.5 1.5 0 0 1 4 17.5v-12ZM20 5.5A1.5 1.5 0 0 0 18.5 4H13v15h5.5a1.5 1.5 0 0 0 1.5-1.5v-12Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>학습</div>
+              <div class="t"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v2.4M12 19.1v2.4M21.5 12h-2.4M4.9 12H2.5M18.7 5.3l-1.7 1.7M7 17l-1.7 1.7M18.7 18.7 17 17M7 7 5.3 5.3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>설정</div>
+            </div>
+          </div>
+          <div class="label"><div class="nm">Tab Bar</div><div class="ds">4-탭 하단 네비게이션</div></div>
+        </div>
+
+        <!-- Alert -->
+        <div class="comp-card wide">
+          <div class="preview" style="align-items:stretch">
+            <div class="s-card-mini" style="padding:18px 16px">
+              <span style="color:var(--danger);flex:0 0 auto"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="16.5" r="1.1" fill="currentColor"/></svg></span>
+              <div><div class="nm" style="margin-bottom:2px">공유 전 다시 확인이 필요합니다</div><div class="tm">허위 정보가 포함된 이미지일 수 있습니다.</div></div>
+            </div>
+          </div>
+          <div class="label"><div class="nm">Alert Banner</div><div class="ds">경고 / 안내 배너</div></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="foot">Ailter Design System · 토큰 정의는 <code style="font-family:var(--font-label)">tokens.css</code> 한 파일에서 관리됩니다 · 앱 프리뷰와 동일한 컴포넌트 사용</div>
+
+  </main>
+</div>
+
+<script>
+  // Primary scale
+  const primary = [
+    ['100','#FFD8D7'],['200','#FFB1AF'],['300','#FF8A88'],['400','#FF6360'],
+    ['500','#FF3C38'],['600','#CF302D'],['700','#9F2422'],['800','#6F1816'],['900','#3F0C0B']
+  ];
+  document.getElementById('primaryScale').innerHTML = primary.map(([k,v]) => {
+    const light = parseInt(k) <= 400;
+    return `<div class="step" style="background:${v};color:${light?'#7a1c1a':'#fff'}"><span>${k}${k==='500'?' ●':''}</span><span class="v">${v}</span></div>`;
+  }).join('');
+
+  // Neutral grid
+  const neutral = [
+    ['Gray 100','#F9FAFB','배경'],['Gray 200','#E9EBEF','보더 · 트랙'],['Gray 300','#C5C6CD','비활성'],
+    ['Gray 400','#999BA5','서브텍스트'],['Gray 500','#6F717C','뮤트 텍스트'],['Black','#1E1E1E','본문'],
+    ['White','#FFFFFF','표면']
+  ];
+  document.getElementById('neutralGrid').innerHTML = neutral.map(([n,v,u]) =>
+    `<div class="swatch"><div class="chip" style="background:${v};${v==='#FFFFFF'||v==='#F9FAFB'?'border-bottom:1px solid var(--border)':''}"></div><div class="info"><div class="nm">${n}</div><div class="hex">${v} · ${u}</div></div></div>`
+  ).join('');
+
+  // Spacing
+  const spaces = [['space-1','4'],['space-2','8'],['space-3','12'],['space-4','16'],['space-5','20'],['space-6','24'],['space-8','32'],['space-10','40']];
+  document.getElementById('spaceList').innerHTML = spaces.map(([n,v]) =>
+    `<div class="space-item"><div class="lbl"><b>${n}</b> <span>· ${v}px</span></div><div class="vis" style="width:${v}px"></div></div>`
+  ).join('');
+
+  // gauge knob
+  (function(){
+    const arc = document.getElementById('dsGauge'), knob = document.getElementById('dsKnob');
+    const len = arc.getTotalLength(), pct = 0.42;
+    arc.style.strokeDasharray = len; arc.style.strokeDashoffset = len*(1-pct);
+    const p = arc.getPointAtLength(len*pct); knob.setAttribute('cx',p.x); knob.setAttribute('cy',p.y);
+  })();
+
+  // scroll-spy nav
+  const links = [...document.querySelectorAll('.ds-nav a[href^="#"]')];
+  const map = {}; links.forEach(l => map[l.getAttribute('href').slice(1)] = l);
+  const obs = new IntersectionObserver((es) => {
+    es.forEach(e => { if (e.isIntersecting) { links.forEach(l=>l.classList.remove('active')); if(map[e.target.id]) map[e.target.id].classList.add('active'); } });
+  }, { rootMargin: '-45% 0px -50% 0px' });
+  document.querySelectorAll('.section').forEach(s => obs.observe(s));
+  links.forEach(l => l.addEventListener('click', e => {
+    e.preventDefault();
+    const el = document.getElementById(l.getAttribute('href').slice(1));
+    if (el) window.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
+  }));
+</script>
+</body>
+</html>
