@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ailter — App Preview</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="app.css">
 </head>
@@ -437,6 +439,11 @@
   }
   placeGauge('gaugeArc', 'gaugeKnob', 0.42);
   placeGauge('gaugeArc2', 'gaugeKnob2', 0.42);
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+  }
 </script>
 </body>
 </html>

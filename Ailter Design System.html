@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ailter — Design System</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#ffffff">
 <link rel="stylesheet" href="tokens.css">
 <link rel="stylesheet" href="ds.css">
 </head>
@@ -311,6 +313,11 @@
     const el = document.getElementById(l.getAttribute('href').slice(1));
     if (el) window.scrollTo({ top: el.offsetTop, behavior: 'smooth' });
   }));
+</script>
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+  }
 </script>
 </body>
 </html>

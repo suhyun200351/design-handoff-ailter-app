@@ -1,0 +1,22 @@
+{
+  "name": "Ailter App",
+  "short_name": "Ailter",
+  "description": "Ailter 앱 디자인 핸드오프",
+  "start_url": "./Ailter App.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/mascot-greet.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/mascot-greet.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
