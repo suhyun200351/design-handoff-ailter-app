@@ -5,67 +5,26 @@
 
 body {
   font-family: var(--font-ui);
-  background:
-    radial-gradient(1200px 800px at 50% -10%, #fff 0%, transparent 60%),
-    linear-gradient(160deg, #f3f4f7 0%, #e9eaef 100%);
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 56px;
-  padding: 48px 32px;
+  background: var(--bg-app);
   color: var(--text-strong);
   letter-spacing: var(--tracking);
 }
 
-/* ---------- Stage / scaling ---------- */
-.stage { display: flex; align-items: center; justify-content: center; gap: 64px; flex-wrap: wrap; }
-
-/* ---------- Device ---------- */
-.device {
-  position: relative;
-  width: 414px;
-  height: 880px;
-  background: #0c0d10;
-  border-radius: 56px;
-  padding: 12px;
-  box-shadow:
-    0 2px 4px rgba(0,0,0,.4) inset,
-    0 50px 90px -30px rgba(20,22,30,.55),
-    0 18px 40px -20px rgba(20,22,30,.4);
-}
-.device::after { /* side buttons */
-  content: ""; position: absolute; left: -3px; top: 180px; width: 3px; height: 64px;
-  background: #16171b; border-radius: 3px 0 0 3px;
-  box-shadow: 0 84px 0 #16171b, 0 -96px 0 #16171b;
-}
+/* ---------- Full-screen app shell ---------- */
 .screen {
-  position: relative;
-  width: 100%; height: 100%;
+  position: fixed;
+  inset: 0;
   background: var(--bg-app);
-  border-radius: 44px;
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
-  display: flex; flex-direction: column;
 }
-
-/* ---------- Status bar ---------- */
-.statusbar {
-  flex: 0 0 auto;
-  height: 54px;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 0 34px 0 38px;
-  font-family: var(--font-label);
-  font-weight: 600; font-size: 16px; color: #000;
-  z-index: 30;
-}
-.statusbar .time { letter-spacing: 0; }
-.statusbar .sb-right { display: flex; align-items: center; gap: 7px; }
 
 /* ---------- App header ---------- */
 .appbar {
   flex: 0 0 auto;
   display: flex; align-items: center; gap: 10px;
-  padding: 6px 20px 12px;
+  padding: calc(env(safe-area-inset-top) + 6px) 20px 12px;
   background: var(--bg-app);
   z-index: 20;
 }
@@ -224,7 +183,7 @@ body {
 /* ---------- Tab bar ---------- */
 .tabbar {
   flex: 0 0 auto;
-  display: flex; padding: 10px 8px 4px;
+  display: flex; padding: 10px 8px calc(env(safe-area-inset-bottom) + 4px);
   background: var(--bg-app);
   border-top: 1px solid var(--divider);
 }
@@ -234,8 +193,6 @@ body {
   font-weight: 500;
 }
 .tab.active { color: var(--primary); font-weight: 600; }
-.home-indicator { height: 22px; display: flex; align-items: center; justify-content: center; background: var(--bg-app); }
-.home-indicator i { width: 140px; height: 5px; border-radius: 3px; background: #0c0d10; }
 
 /* ---------- Red hero (history / C-0) ---------- */
 .hero-red {
@@ -328,7 +285,6 @@ body {
   color: var(--gray-400); font-family: var(--font-label); font-size: 11px; letter-spacing: 0;
 }
 
-.caption-note { text-align: center; font-family: var(--font-label); font-size: 13px; color: #8b8f98; letter-spacing: 0; }
 
 /* clickable affordance */
 .tappable { cursor: pointer; -webkit-tap-highlight-color: transparent; }
@@ -354,7 +310,7 @@ body {
 
 .sub-head {
   flex: 0 0 auto; display: flex; align-items: center; gap: 6px;
-  padding: 8px 14px 12px; background: var(--bg-app);
+  padding: calc(env(safe-area-inset-top) + 8px) 14px 12px; background: var(--bg-app);
 }
 .sub-head .back {
   width: 40px; height: 40px; display: flex; align-items: center; justify-content: center;
@@ -363,7 +319,7 @@ body {
 .sub-head .back:active { background: rgba(0,0,0,.05); }
 .sub-head h1 { font-size: 19px; font-weight: 700; letter-spacing: var(--tracking); white-space: nowrap; }
 /* centered title (matches figma) */
-.sub-head.center { position: relative; justify-content: center; padding: 8px 0 12px; }
+.sub-head.center { position: relative; justify-content: center; padding: calc(env(safe-area-inset-top) + 8px) 0 12px; }
 .sub-head.center .back { position: absolute; left: 8px; top: 4px; }
 .sub-head.center h1 { font-size: 16px; font-weight: 600; }
 .sub-head .head-action { margin-left: auto; font-size: 14px; color: var(--text-subtle); font-weight: 500; padding-right: 8px; }
